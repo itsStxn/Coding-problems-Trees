@@ -15,6 +15,7 @@ public class Solution {
 
 public class TreeNode {
 	public int val;
+	public int spacing;
 	public TreeNode? left;
 	public TreeNode? right;
 	private readonly string id = Guid.NewGuid().ToString();
@@ -23,6 +24,7 @@ public class TreeNode {
 		val = 0;
 		left = null;
 		right = null;
+		spacing = 1;
 		Add(input);
 	}
 
@@ -30,6 +32,7 @@ public class TreeNode {
 		this.val = val;
 		this.left = left;
 		this.right = right;
+		spacing = 1;
 	}
 	private void Add(int?[] input) {
 		Queue<int?> nodes = new(input);
@@ -69,8 +72,8 @@ public class TreeNode {
 		return false;
 	}
 
-	private static string Print(List<List<string>> levels, int maxLevel) {
-		StringBuilder output = new();
+	private string Print(List<List<string>> levels, int maxLevel) {
+		System.Text.StringBuilder output = new();
 		int maxWidth = (int)Math.Pow(2, maxLevel);
 
 		for (int i = 0; i < levels.Count; i++) {
@@ -79,7 +82,7 @@ public class TreeNode {
 			
 			for (int j = 0; j < levels[i].Count; j++) {
 				output.Append(levels[i][j]);
-				output.Append(new string(' ', Math.Max(spaces * 2 - 2, 0)));
+				output.Append(new string(' ', Math.Max(spaces * 2 - spacing, 0)));
 			}
 			output.AppendLine();
 		}
