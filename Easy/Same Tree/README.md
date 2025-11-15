@@ -19,7 +19,7 @@ Two binary trees are considered the same if they are structurally identical, and
 
 ### Constraints
 The number of nodes in both trees is in the range [0, 100].  
--104 <= `Node.val` <= 104
+-10^4 <= `Node.val` <= 10^4
 
 ## Strategy
 Recursively see if the `left` and `right` nodes of `p` and `q` have different values. If they do, they are not the same.

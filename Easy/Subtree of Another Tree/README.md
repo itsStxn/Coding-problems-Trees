@@ -16,8 +16,8 @@ A subtree of a binary tree `tree` is a tree that consists of a node in `tree` an
 ### Constraints
 The number of nodes in the root tree is in the range `[1, 2000]`.  
 The number of nodes in the subRoot tree is in the range `[1, 1000]`.  
--104 <= `root.val` <= 104  
--104 <= `subRoot.val` <= 104
+-10^4 <= `root.val` <= 10^4  
+-10^4 <= `subRoot.val` <= 10^4
 
 ## Strategy
 Recursively move to the `left` and `right` of `root`. If the value of `root` or one his his nodes is the same as `subRoot`, recursively check if they share the same descendants and structure.  
